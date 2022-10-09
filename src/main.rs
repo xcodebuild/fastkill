@@ -1,4 +1,4 @@
-use std::{collections::HashMap, os::unix::process};
+use std::collections::HashMap;
 
 use inquire::{error::InquireError, Select};
 use regex::Regex;
@@ -27,13 +27,13 @@ fn get_pid_port_table() -> HashMap<String, PortInfo> {
         if line.contains("LISTEN") {
             let regex = Regex::new(r"\s+").unwrap();
             let line = regex.split(line).collect::<Vec<&str>>();
-            let addressPort = line[8].split(':').collect::<Vec<&str>>();
+            let address_port = line[8].split(':').collect::<Vec<&str>>();
             let pid = line[1].to_string();
-            let portInfo = PortInfo {
+            let port_info = PortInfo {
                 protocol: line[7].to_string(),
-                port: addressPort[1].to_string(),
+                port: address_port[1].to_string(),
             };
-            table.insert(pid, portInfo);
+            table.insert(pid, port_info);
         }
     });
     table
@@ -50,7 +50,7 @@ fn kill_process_by_pid(pid: String) -> () {
 
 impl App {
     fn new() -> Self {
-        let mut system = System::new();
+        let system = System::new();
         Self { system }
     }
 
@@ -77,7 +77,7 @@ impl App {
                 let pid = &p.pid.to_string();
 
                 let port = match table.get(pid) {
-                    Some(portInfo) => format!("LISTEN {}:{}", portInfo.protocol, portInfo.port),
+                    Some(port_info) => format!("LISTEN {}:{}", port_info.protocol, port_info.port),
                     None => "NOT LISTEN".to_string(),
                 };
                 format!(
