@@ -1,7 +1,10 @@
 [package]
 name = "fastkill"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
+description = "Interactive CLI to kill process with port/pid/name"
+license-file = "LICENSE"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
