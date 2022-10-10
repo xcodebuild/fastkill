@@ -1,6 +1,6 @@
 [package]
 name = "fastkill"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2021"
 description = "Interactive CLI to kill process with port/pid/name"
 license-file = "LICENSE"
