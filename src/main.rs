@@ -46,7 +46,7 @@ impl<'a> std::fmt::Display for ProcessInfo<'a> {
         ))?;
 
         for port in &self.ports {
-            f.write_fmt(format_args!("{:>10} ", port))?;
+            f.write_fmt(format_args!("{} ", port))?;
         }
 
         Ok(())
