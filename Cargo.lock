@@ -65,8 +65,10 @@ name = "fastkill"
 version = "1.0.0"
 dependencies = [
  "inquire",
+ "once_cell",
  "regex",
  "sysinfo",
+ "unicode-width",
 ]
 
 [[package]]
@@ -139,6 +141,12 @@ name = "newline-converter"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d6f81c2b19eebbc4249b3ca6aff70ae05bf18d6a99b7cc63cf0248774e640565"
+
+[[package]]
+name = "once_cell"
+version = "1.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e82dad04139b71a90c080c8463fe0dc7902db5192d939bd0950f074d014339e1"
 
 [[package]]
 name = "parking_lot"
